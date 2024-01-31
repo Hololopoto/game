@@ -96,7 +96,7 @@ function App() {
               {question}({answer.length})
             </span>
           </div>
-          <div className="my-12 text-white h-[60px]">
+          <div className="my-12 text-white max-[768px]:mb-16 h-[60px]">
             {keywords.map((item, index) => (
               <span
                 className={`cursor-pointer w-10 h-10 inline-block hover:bg-red-200 text-3xl border-b-4 m-3 ${
