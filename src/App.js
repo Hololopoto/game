@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { DATA } from "./data";
-import "./App.css";
 const alphabet = [
   "A",
   "B",
