@@ -92,7 +92,9 @@ function App() {
       {answer !== "" && (
         <div>
           <div>
-            <span className="text-3xl text-white font-bold">{question}</span>
+            <span className="text-3xl text-white font-bold">
+              {question}({answer.length})
+            </span>
           </div>
           <div className="my-12 text-white h-[60px]">
             {keywords.map((item, index) => (
