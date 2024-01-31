@@ -66,8 +66,11 @@ function App() {
   const [clas, setClas] = useState("");
 
   useEffect(() => {
+    if (keywords.length === 0) {
+      setWrong(false);
+    }
     if (keywords.length === answer.length) {
-      setClas("bg-red-400");
+      setClas("bg-orange-800");
     } else {
       setClas("");
     }
