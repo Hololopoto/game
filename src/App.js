@@ -99,7 +99,7 @@ function App() {
             {keywords.map((item, index) => (
               <span
                 className={`cursor-pointer w-10 h-10 inline-block hover:bg-red-200 text-3xl border-b-4 m-3 ${
-                  wrong == true && "border-red-600"
+                  wrong == true && "border-orange-800"
                 }`}
                 onClick={() => remoweKeyword(index)}
                 key={index}>
