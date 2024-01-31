@@ -62,6 +62,17 @@ function App() {
 
     console.log(wrong.toString());
   };
+
+  const [clas, setClas] = useState("");
+
+  useEffect(() => {
+    if (keywords.length === answer.length) {
+      setClas("bg-red-400");
+    } else {
+      setClas("");
+    }
+  });
+
   useEffect(() => {});
   console.log(keywords);
   useEffect(() => {
@@ -99,8 +110,8 @@ function App() {
           <div className="my-12 text-white max-[768px]:mb-16 h-[60px]">
             {keywords.map((item, index) => (
               <span
-                className={`cursor-pointer w-10 h-10 inline-block hover:bg-red-200 text-3xl border-b-4 m-3 ${
-                  wrong == true && "border-orange-800"
+                className={`cursor-pointer w-10 h-10 inline-block ${clas} hover:bg-red-200 text-3xl border-b-4 m-3    ${
+                  wrong && "border-orange-800"
                 }`}
                 onClick={() => remoweKeyword(index)}
                 key={index}>
