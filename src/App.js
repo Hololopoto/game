@@ -108,10 +108,10 @@ function App() {
               </span>
             ))}
           </div>
-          <div className="mt-10">
+          <div className="mt-10 max-[768px]:w-[70%],flex ">
             {answerArray.map((item, index) => (
               <button
-                className="w-10 h-10 mx-1 rounded-md hover:bg-zinc-200 text-xl bg-zinc-100"
+                className="w-10 h-10 mb-5 mx-1 rounded-md  hover:bg-zinc-200 text-xl bg-zinc-100"
                 key={index}
                 onClick={() => setKeyword(item)}>
                 {item}
