@@ -39,12 +39,16 @@ function App() {
   const [keywords, setKeywords] = useState([]);
   const [resultQuestion, setResultQuestion] = useState(false);
   const [wrong, setWrong] = useState(false);
+  const [clas, setClas] = useState("");
+
   function refreshPage() {
     window.location.reload(false);
   }
+  // Harfleri karıştırma
   const shuffle = (array) => {
     return array.sort(() => Math.random() - 0.5);
   };
+  // cevabın uzunluğu kadar harf ekleme ve cevabın doğruluk kontrolü
   const setKeyword = (keyword) => {
     if (keywords.length < answer.length) {
       keywords.push(keyword);
@@ -59,11 +63,7 @@ function App() {
         setWrong(true);
       }
     }
-
-    console.log(wrong.toString());
   };
-
-  const [clas, setClas] = useState("");
 
   useEffect(() => {
     if (keywords.length === 0) {
@@ -76,8 +76,6 @@ function App() {
     }
   });
 
-  useEffect(() => {});
-  console.log(keywords);
   useEffect(() => {
     setAnswer("");
     setWrong(false);
@@ -97,6 +95,8 @@ function App() {
       setAnswerArray(shuffle(alphabetLowerData));
     }
   }, [resultQuestion]);
+
+  // yanlış girilen harfi silme
   const remoweKeyword = (index) => {
     keywords.splice(index, 1);
     setKeywords([...keywords]);
