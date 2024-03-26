@@ -116,11 +116,11 @@ function App() {
             <div className="flex justify-center text-white">
               <PiLightbulb
                 onClick={handleClıck}
-                size={"25px"}
+                size={"30px"}
                 className="cursor-pointer fixed animate-pulse  "
               />
               {hınt ? (
-                <div className="absolute my-7 ">
+                <div className="absolute my-9 ">
                   {answer[0].toUpperCase() + answer.slice(1)}
                 </div>
               ) : null}
