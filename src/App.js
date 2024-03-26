@@ -42,6 +42,11 @@ function App() {
   const [resultQuestion, setResultQuestion] = useState(false);
   const [wrong, setWrong] = useState(false);
   const [clas, setClas] = useState("");
+  const [hınt, setHınt] = useState(false);
+  const handleClıck = (e) => {
+    setHınt(!hınt);
+    console.log(hınt);
+  };
 
   function refreshPage() {
     window.location.reload(false);
@@ -107,12 +112,22 @@ function App() {
     <div className="text-center bg-orange-400 h-[100vh] flex justify-center items-center">
       {answer !== "" && (
         <div>
-          <div className="">
-            <div className="">
-              <PiLightbulb />
+          <div className="flex flex-col items-end ">
+            <div className="flex justify-center text-white">
+              <PiLightbulb
+                onClick={handleClıck}
+                size={"25px"}
+                className="cursor-pointer fixed animate-pulse  "
+              />
+              {hınt ? (
+                <div className="absolute my-7 ">
+                  {answer[0].toUpperCase() + answer.slice(1)}
+                </div>
+              ) : null}
             </div>
           </div>
-          <div>
+
+          <div className="">
             <span className="text-3xl text-white font-bold">
               {question}({answer.length})
             </span>
