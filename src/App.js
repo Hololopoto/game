@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { DATA } from "./data";
+import { PiLightbulb } from "react-icons/pi";
+
 const alphabet = [
   "A",
   "B",
@@ -105,6 +107,11 @@ function App() {
     <div className="text-center bg-orange-400 h-[100vh] flex justify-center items-center">
       {answer !== "" && (
         <div>
+          <div className="">
+            <div className="">
+              <PiLightbulb />
+            </div>
+          </div>
           <div>
             <span className="text-3xl text-white font-bold">
               {question}({answer.length})
